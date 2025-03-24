@@ -2,105 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dharun & Saranya - Wedding Invitation</title>
-  <style>
-    body {
-      background-color: #fff8f0;
-      font-family: Georgia, serif;
-      color: #4B0000;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      text-align: center;
-      padding: 2rem;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      margin-bottom: 2rem;
-    }
-    h1, h2, h3 {
-      color: #800000;
-    }
-    .countdown {
-      font-size: 1.5rem;
-      margin: 1rem 0;
-      color: #B22222;
-    }
-    .btn {
-      background-color: #800000;
-      color: white;
-      padding: 0.7rem 1.5rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-    audio {
-      margin-top: 1rem;
-    }
-    @media screen and (max-width: 768px) {
-      h1 { font-size: 1.8rem; }
-      h2 { font-size: 1.5rem; }
-      .countdown { font-size: 1.2rem; }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wedding Invitation</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Libre+Baskerville&display=swap" rel="stylesheet">
 </head>
-<body>
-  <div class="container">
-    <h1>You're Invited!</h1>
-    <p style="font-size: 1.2rem;">Join us to celebrate the sacred union of</p>
-    <h2>Dharun & Saranya</h2>
-
-    <!-- Main Illustration -->
-    <img src="/mnt/data/Screenshot 2025-03-23 185841.png" alt="Main Invitation Illustration" />
-
-    <!-- Bride and Groom Section -->
-    <img src="/mnt/data/image4.png" alt="Bride and Groom Portrait" />
-
-    <!-- Wedding & Reception Details -->
-    <img src="/mnt/data/image 5.png" alt="Wedding and Reception Info" />
-
-    <!-- Countdown Timers -->
-    <div class="countdown">
-      <h3>Wedding Ceremony Countdown</h3>
-      <div id="weddingCountdown"></div>
-
-      <h3>Wedding Reception Countdown</h3>
-      <div id="receptionCountdown"></div>
+<body class="landing">
+  <div class="overlay">
+    <div class="content">
+      <p class="invite">Dear Guest,</p>
+      <p class="invite">You Are Warmly Invited!</p>
+      <h1 class="title">The Wedding Celebration of</h1>
+      <h2 class="names">Dharun & Saranya</h2>
+      <a href="invitation.html" class="btn">✉️ Open Invitation</a>
     </div>
-
-    <!-- Audio Background -->
-    <audio controls autoplay loop>
-      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-
-    <!-- Download PDF -->
-    <br/><br/>
-    <button class="btn" onclick="window.print()">Download PDF</button>
   </div>
-
-  <script>
-    // Countdown Logic
-    function updateCountdown(id, targetDateStr) {
-      const target = new Date(targetDateStr).getTime();
-      const el = document.getElementById(id);
-      setInterval(() => {
-        const now = new Date().getTime();
-        const distance = target - now;
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        el.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-      }, 1000);
-    }
-    updateCountdown("weddingCountdown", "July 12, 2024 18:30:00");
-    updateCountdown("receptionCountdown", "July 20, 2024 19:30:00");
-  </script>
 </body>
 </html>
