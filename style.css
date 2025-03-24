@@ -1,15 +1,58 @@
-
-body.landing {
+/* General Reset */
+body, html {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Libre Baskerville', serif;
+  background: black;
+}
+
+/* Main Content Wrapper */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Fullscreen Media Container (Video & Images) */
+.video-section, .image-section {
+  width: 56.25vw; /* 9:16 aspect ratio */
+  height: 100vh;
+  max-width: 1080px;
+  max-height: 1920px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Video Styling */
+.video-section video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Image Styling */
+.image-section {
+  background-size: cover;
+  background-position: center;
+}
+
+/* Landing Page Background */
+body.landing {
   background: url('background.jpg') no-repeat center center/cover;
   height: 100vh;
-  font-family: 'Libre Baskerville', serif;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Overlay */
 .overlay {
   background-color: rgba(51, 0, 0, 0.65);
   width: 100%;
@@ -21,26 +64,29 @@ body.landing {
   box-sizing: border-box;
 }
 
+/* Centered Content */
 .content {
   text-align: center;
   color: #fff8dc;
   max-width: 700px;
 }
 
+/* Invitation Text */
 .invite {
   font-size: 1.3rem;
   margin: 0.5rem 0;
   line-height: 1.8;
 }
 
+/* Title */
 .title {
   font-size: 2rem;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   line-height: 1.6;
-  font-family: 'Libre Baskerville', serif;
 }
 
+/* Names */
 .names {
   font-size: 2.8rem;
   font-weight: bold;
@@ -49,6 +95,7 @@ body.landing {
   font-family: 'Great Vibes', cursive;
 }
 
+/* Button */
 .btn {
   display: inline-block;
   padding: 14px 30px;
@@ -67,67 +114,16 @@ body.landing {
   box-shadow: 0 0 16px 6px rgba(255, 215, 0, 0.7);
 }
 
-/* General styling */
-body {
-  background-color: #fff8f0;
-  font-family: Georgia, serif;
-  color: #4B0000;
-  margin: 0;
-  padding: 0;
-}
-
-/* Fixed Left Section */
-.fixed-left {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100vh;
-  background-color: black;
-  color: white;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-/* Scrollable Right Section */
-.scrollable-right {
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: 50%;
-}
-
-/* Full-screen video */
-.video-section {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: black;
-}
-
-.video-section video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Full-screen images */
-.image-section {
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-}
-
 /* Mobile Adjustments */
-@media (max-width: 767.98px) {
-  .fixed-left {
-    display: none;
+@media (max-width: 1080px) {
+  .video-section, .image-section {
+    width: 100vw;
+    height: 177.78vw; /* Maintain 9:16 ratio */
   }
+}
+
+@media (max-width: 767.98px) {
   .scrollable-right {
     margin-left: 0;
   }
 }
-
