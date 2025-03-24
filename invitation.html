@@ -1,21 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Dineswar & Raynusha - Invitation</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dharun & Saranya - Invitation</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- External CSS -->
 </head>
-<body style="background-color: #fff8f0; font-family: Georgia, serif; color: #4B0000;">
-  <div style="padding: 2rem; text-align: center;">
-    <h1 style="color: #800000;">You're Invited!</h1>
-    <p style="font-size: 1.2rem;">Join us to celebrate the sacred union of</p>
-    <h2 style="color: #B22222;">Dineswar & Raynusha</h2>
-    <p>Date: 15th August 2025</p>
-    <p>Time: 6:00 PM</p>
-    <p>Venue: Mahalakshmi Wedding Hall, Chennai</p>
-    <br/>
-    <p style="font-style: italic;">With love and blessings, we invite you to be part of our special day.</p>
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      
+      <!-- Left Section (Fixed Invitation Details) -->
+      <div class="col-md-6 d-none d-md-flex align-items-center justify-content-center fixed-left">
+        <div class="text-center">
+          <h1>You're Invited!</h1>
+          <p>Join us to celebrate the sacred union of</p>
+          <h2>Dharun & Saranya</h2>
+          <p>Date: 15th August 2025</p>
+          <p>Time: 6:00 PM</p>
+          <p>Venue: Mahalakshmi Wedding Hall, Chennai</p>
+          <br>
+          <p><em>With love and blessings, we invite you to be part of our special day.</em></p>
+        </div>
+      </div>
+
+      <!-- Right Section (Scrollable Images) -->
+      <div class="col-md-6 offset-md-6 col-12 scrollable-right">
+        <div class="image-section" style="background-image: url('image1.jpg');"></div>
+        <div class="image-section" style="background-image: url('image2.jpg');"></div>
+        <div class="image-section" style="background-image: url('image3.jpg');"></div>
+      </div>
+
+    </div>
   </div>
+
+  <!-- Bootstrap JS (Optional) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
