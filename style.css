@@ -127,3 +127,29 @@ body.landing {
     margin-left: 0;
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const videos = document.querySelectorAll("video");
+
+    function handleVideoPlayback() {
+        videos.forEach((video, index) => {
+            const rect = video.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            if (index === 0) {
+                // Ensure the first video always plays
+                if (video.paused) video.play();
+            } else {
+                // Play other videos only when 60% visible
+                if (rect.top >= -0.6 * rect.height && rect.top <= 0.4 * windowHeight) {
+                    if (video.paused) video.play();
+                } else {
+                    video.pause();
+                }
+            }
+        });
+    }
+
+    window.addEventListener("scroll", handleVideoPlayback);
+    handleVideoPlayback(); // Run once on page load
+});
